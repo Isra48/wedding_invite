@@ -9,7 +9,13 @@
 }
 
 @layer base {
-  html, body { @apply bg-white text-slate-900; }
+  html, body {
+     @apply text-slate-900; background-image: url('/Bg.png');
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: top left;
+   }
 }
 
 @layer components {
