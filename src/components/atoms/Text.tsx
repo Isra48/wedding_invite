@@ -1,0 +1,1 @@
+import { cx } from '@utils/cx'; export default function Text({className, children}:{className?:string, children:React.ReactNode}){ return <p className={cx('text-base leading-relaxed text-slate-600', className)}>{children}</p> }
