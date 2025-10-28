@@ -5,7 +5,7 @@ const items: Item[] = [
   { time: "15:00", title: "Ceremonia" },
   { time: "16:00", title: "Cóctel" },
   { time: "17:00", title: "Banquete" },
-  { time: "19:00", title: "Baile" },
+  { time: "19:00", title: "Baile" }
   ,
 ];
 export default function Timeline(){
