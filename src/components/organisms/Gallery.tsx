@@ -38,10 +38,9 @@ function GalleryItem({ src, alt }: { src: string; alt: string }) {
         alt={alt}
         fill
         sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 25vw"
-        className={`object-cover object-center transition-transform duration-300 hover:scale-105 ${
-          loaded ? "opacity-100" : "opacity-0"
-        }`}
-    onLoad={() => setLoaded(true)}
+        className={`object-cover object-center transition-transform duration-300 hover:scale-105 ${loaded ? "opacity-100" : "opacity-0"
+          }`}
+        onLoad={() => setLoaded(true)}
 
       />
     </div>

@@ -1,1 +1,1 @@
-export default function Footer(){ return (<footer className='border-t'><div className='container-wide py-10 text-center text-sm text-slate-500'>Hecho con amor — Next.js + Tailwind</div></footer>); }
+export default function Footer(){ return (<footer className='border-t'><div className='container-wide py-10 text-center text-sm text-slate-500'>Hecho con ❤️ — B & E </div></footer>); }

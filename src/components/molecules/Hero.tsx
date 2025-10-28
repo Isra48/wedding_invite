@@ -6,7 +6,7 @@ export default function Hero({ bgSrc = "/hero/bg.jpg" }: { bgSrc?: string }) {
   return (
     <section
       id="hero"
-     className="relative h-[75vh] md:h-[75vh] lg:h-[80vh]   /* ← alturas por breakpoint */
+      className="relative h-[75vh] md:h-[75vh] lg:h-[80vh]   /* ← alturas por breakpoint */
         flex flex-col items-center justify-start
         overflow-visible
         mb-38 sm:mb-24 md:mb-0
@@ -20,8 +20,8 @@ export default function Hero({ bgSrc = "/hero/bg.jpg" }: { bgSrc?: string }) {
         fill
         priority
         sizes="100vw"
-     className="object-cover xl:object-contain"
-         style={{ objectPosition: "70% 0%" }} 
+        className="object-cover xl:object-contain"
+        style={{ objectPosition: "70% 0%" }}
       />
 
       {/* Overlay */}
@@ -29,7 +29,7 @@ export default function Hero({ bgSrc = "/hero/bg.jpg" }: { bgSrc?: string }) {
 
       {/* Contenedor principal */}
       <div
-          className="
+        className="
           relative z-10
           mt-[38vh] md:mt-[30vh]          
           w-[90%] sm:w-[80%] md:w-[65%] lg:w-[60%]
@@ -60,8 +60,12 @@ export default function Hero({ bgSrc = "/hero/bg.jpg" }: { bgSrc?: string }) {
             <h2 className="text-center text-xl sm:text-2xl font-semibold text-slate-900">
               We´re getting married
             </h2>
-            <p>blah blah blah</p>
-            <p>blah blah blah</p>
+            <img
+              src="/hero/ornament.png"
+              alt="Decorative separator"
+             className="mx-auto block w-[220px] sm:w-[260px] md:w-[300px] lg:w-[340px] object-contain bg-white/50  opacity-75" 
+    
+            />
           </div>
         </div>
 
