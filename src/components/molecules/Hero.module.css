@@ -1,0 +1,70 @@
+/* Tarjeta con borde rasgado: MASK en ::before y contenido encima */
+.tornCard {
+  position: relative;
+  isolation: isolate; /* asegura z-index correcto del ::before */
+}
+
+.tornCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  
+
+  /* Relleno 100% opaco con tu textura y fallback blanco */
+  background: #fff url("/Bg.png") repeat top left;
+
+  /* Sombra para dar volumen */
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.22),
+    inset 0 0 18px rgba(0,0,0,0.06);
+
+    
+
+  /* Máscara ÚNICA (un solo path para evitar líneas) */
+  -webkit-mask-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 700' preserveAspectRatio='none'>\
+  <path fill='black' d='\
+M20,80 \
+C120,60 220,95 320,80 420,65 520,95 620,80 720,65 820,95 920,80 \
+L980,100 \
+C960,180 980,260 980,340 980,420 960,500 980,580 \
+L920,620 \
+C820,605 720,635 620,620 520,605 420,635 320,620 220,605 120,635 20,620 \
+L20,580 \
+C40,500 20,420 20,340 20,260 40,180 20,100 Z'/>\
+</svg>");
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+
+  mask-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 700' preserveAspectRatio='none'>\
+  <path fill='black' d='\
+M20,80 \
+C120,60 220,95 320,80 420,65 520,95 620,80 720,65 820,95 920,80 \
+L980,100 \
+C960,180 980,260 980,340 980,420 960,500 980,580 \
+L920,620 \
+C820,605 720,635 620,620 520,605 420,635 320,620 220,605 120,635 20,620 \
+L20,580 \
+C40,500 20,420 20,340 20,260 40,180 20,100 Z'/>\
+</svg>");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+/* Contenido de la tarjeta por encima de la máscara */
+.tornCardContent {
+  position: relative;
+  z-index: 1;
+}
+
+/* Aumenta la altura visual sin deformar el contenido */
+.tornCardTall {
+  min-height: 400px; /* ajusta el tamaño vertical que necesites */
+  padding-top: 3rem; /* opcional: espacio interno arriba */
+  padding-bottom: 3rem; /* opcional: espacio interno abajo */
+}
+
+
+

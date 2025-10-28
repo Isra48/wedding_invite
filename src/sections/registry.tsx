@@ -8,7 +8,8 @@ import SectionUbicacion from "./section-ubicacion";
 import SectionGuestBook from "./section-guestbook";
 import SectionRegistry from "./section-registry";
 export const sections = (guestId?: string) => [
-  { component: (p:any)=> <Hero {...p} />, props: { id: "hero" } },
+  { 
+    component: (p:any) => <Hero {...p} bgSrc="/hero/bg.jpg" />, props: { id: "hero" } },
   { component: SectionCountdown, props: { id: "countdown", title: "Cuenta regresiva", subtitle: guestId ? `Invitado #${guestId}, te esperamos` : undefined } },
   { component: SectionDetalles, props: { id: "detalles", title: "Detalles" } },
   { component: SectionItinerario, props: { id: "itinerario", title: "Itinerario" } },

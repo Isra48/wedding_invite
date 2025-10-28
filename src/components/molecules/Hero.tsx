@@ -1,37 +1,68 @@
-import Heading from "@atoms/Heading";
-import Text from "@atoms/Text";
-import Button from "@atoms/Button";
-import RevealOnScroll from "@molecules/RevealOnScroll";
-import ResponsiveMedia from "@molecules/ResponsiveMedia";
+"use client";
+import Image from "next/image";
+import styles from "./Hero.module.css"; // ✅ asegúrate de tener esta línea
 
-export default function Hero() {
+export default function Hero({ bgSrc = "/hero/bg.jpg" }: { bgSrc?: string }) {
   return (
-    <section id="hero" className="section">
-      <div className="container-wide grid gap-8 items-center lg:grid-cols-2">
-        <RevealOnScroll>
-          <div className="space-y-6 text-center lg:text-left">
-            <Heading as="h1" size="hero">Felix & Celine</Heading>
-            <Text className="text-base sm:text-lg md:text-xl">
-              Te invitamos a celebrar con nosotros. Encuentra aquí detalles, ubicación y confirma tu asistencia.
-            </Text>
-            <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-              <Button href="#rsvp">Confirmar asistencia</Button>
-              <Button href="#detalles" variant="ghost">Ver detalles</Button>
-            </div>
-          </div>
-        </RevealOnScroll>
-        <RevealOnScroll delay={0.1}>
-          <ResponsiveMedia
-            src="/hero.jpg"
-            alt="Portada"
-            aspect="aspect-[4/5]"
-            aspectSm="sm:aspect-[4/5]"
-            aspectMd="md:aspect-[3/4]"
-            aspectLg="lg:aspect-[4/5]"
-            rounded="rounded-3xl"
-            className="bg-white"
+    <section
+      id="hero"
+     className="relative h-[75vh] md:h-[75vh] lg:h-[80vh]   /* ← alturas por breakpoint */
+        flex flex-col items-center justify-start
+        overflow-visible"
+    >
+      {/* Imagen de fondo */}
+      <Image
+        src={bgSrc}
+        alt="Hero background"
+        fill
+        priority
+        sizes="100vw"
+     className="object-cover xl:object-contain"
+         style={{ objectPosition: "70% 0%" }} 
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+
+      {/* Contenedor principal */}
+      <div
+          className="
+          relative z-10
+          mt-[38vh] md:mt-[30vh]          
+          w-[90%] sm:w-[80%] md:w-[65%] lg:w-[60%]
+          flex items-center justify-center
+        "
+      >
+        {/* Imagen lateral izquierda */}
+        <div
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-00 pointer-events-none"
+          style={{ marginLeft: "-75px" }}  // ← ajusta qué tan pegada está
+        >
+          <img
+            src="/hero/side.png"
+            alt=""
+            aria-hidden="true"
+            className="w-[100px] sm:w-[120px] md:w-[150px] scale-[2.3] origin-left will-change-transform"
           />
-        </RevealOnScroll>
+        </div>
+
+        {/* Contenedor central con borde rasgado */}
+        <div
+          className={`
+    ${styles.tornCard} ${styles.tornCardTall}
+    w-[70%] sm:w-[80%] md:w-[65%] lg:w-[90%]
+  `}
+        >
+          <div className={"p-6 sm:p-8 " + styles.tornCardContent}>
+            <h2 className="text-center text-xl sm:text-2xl font-semibold text-slate-900">
+              We´re getting married
+            </h2>
+            <p>blah blah blah</p>
+            <p>blah blah blah</p>
+          </div>
+        </div>
+
+
       </div>
     </section>
   );
