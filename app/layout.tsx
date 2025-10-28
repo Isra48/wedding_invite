@@ -6,7 +6,7 @@ const display = Playfair_Display({ subsets: ["latin"], variable: "--font-display
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 
 export const metadata: Metadata = {
-  title: "Felix & Celine — Wedding Invite",
+  title: "TheTurtles — B & E Invite",
   description: "Clone-like wedding invite site built with Next.js, Tailwind, and Atomic Design.",
 };
 
