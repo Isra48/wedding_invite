@@ -11,7 +11,10 @@ const config: Config = {
       maxWidth: { "content-narrow": "960px", "content-wide": "1200px" },
       spacing: { 15: "3.75rem", 22: "5.5rem", 26: "6.5rem" },
       colors: { primary: "#1f2937", secondary: "#334155", accent: "#9ca3af", gold: "#C9A227", rose: "#F3D1D8" },
-      fontFamily: { display: ["var(--font-display)"], body: ["var(--font-body)"] },
+      fontFamily: {
+         display: ["var(--font-display)"],
+          body: ["var(--font-body)"],
+        dancing: ['"Dancing Script"', 'cursive'] },
       keyframes: {
         shimmer: { "0%": { transform: "translateX(-100%)" }, "100%": { transform: "translateX(100%)" } },
         fadeUp: { "0%": { opacity: "0", transform: "translateY(12px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },

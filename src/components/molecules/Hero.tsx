@@ -8,7 +8,10 @@ export default function Hero({ bgSrc = "/hero/bg.jpg" }: { bgSrc?: string }) {
       id="hero"
      className="relative h-[75vh] md:h-[75vh] lg:h-[80vh]   /* ← alturas por breakpoint */
         flex flex-col items-center justify-start
-        overflow-visible"
+        overflow-visible
+        mb-38 sm:mb-24 md:mb-0
+        
+        "
     >
       {/* Imagen de fondo */}
       <Image

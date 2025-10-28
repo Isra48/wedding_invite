@@ -32,9 +32,11 @@ export default function Countdown({ dateISO }: { dateISO: string }) {
 
   return (
     <div className="grid gap-8 text-center">
-      {/* ✨ Texto de introducción */}
+      <h2 className="text-3xl sm:text-4xl md:text-5xl mt-24 font-semibold  ">Donde todo comenzó</h2>
       <div className="max-w-2xl mx-auto space-y-4">
-        <p className="text-base sm:text-lg italic text-slate-700 leading-relaxed">
+
+       
+        <p className="text-base sm:text-lg italic text-slate-700 leading-relaxed ">
           “Mi primer amor fue todo al mismo tiempo. Un amor que nunca olvidas, 
           ni siquiera tratas, tampoco quieres; un amor tan grande, tan fuerte 
           que nunca muere, no se desvanece, no pierde electricidad, la clase 

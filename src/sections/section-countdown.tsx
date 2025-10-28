@@ -5,7 +5,7 @@ export default function SectionCountdown({ id, title, subtitle }: { id: string; 
   <section id={id} className="section pt-0">
     <div className="container-narrow">
       {/*<SectionHeader title={title || "Cuenta regresiva"} subtitle={subtitle} /> */}
-      <div className="mt-8"><Countdown dateISO="2025-10-18T16:00:00-06:00" /></div>
+      <div className="mt-8"><Countdown dateISO="2026-02-07T16:00:00-00:00" /></div>
     </div>
   </section>);
 }

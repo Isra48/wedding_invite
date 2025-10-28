@@ -1,11 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
 
 :root {
   --radius: 16px;
   --font-display: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif;
+
+  
 }
 
 @layer base {
@@ -29,4 +33,9 @@
     animation: shimmer 1.2s infinite;
   }
 }
+
+h2 {
+  @apply font-dancing;
+}
+
 
