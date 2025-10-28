@@ -1,9 +1,12 @@
 type Item = { time: string; title: string; description?: string };
 const items: Item[] = [
   { time: "16:00", title: "Ceremonia", description: "Jardín principal" },
-  { time: "17:00", title: "Fotos & brindis" },
-  { time: "19:00", title: "Cena" },
-  { time: "21:00", title: "Baile" },
+  { time: "14:30", title: "Bienvenida" },
+  { time: "15:00", title: "Ceremonia" },
+  { time: "16:00", title: "Cóctel" },
+  { time: "17:00", title: "Banquete" },
+  { time: "19:00", title: "Baile" },
+  ,
 ];
 export default function Timeline(){
   return (<ol className="relative border-s border-slate-200 ps-6">
