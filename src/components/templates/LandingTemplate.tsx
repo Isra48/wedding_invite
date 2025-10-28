@@ -1,6 +1,21 @@
-import type { ReactNode } from "react";
-import type { SectionProps } from "@types/section";
-type AnySection = (props: SectionProps) => ReactNode;
-export default function LandingTemplate({ sections }:{ sections:{ component: AnySection; props: SectionProps }[] }){
-  return (<main>{sections.map(({component:Section, props})=> (<Section key={props.id} {...props} />))}</main>);
+import type { SectionSpec } from "@lib/types/sections";
+
+export default function LandingTemplate({
+  sections,
+}: {
+  sections: ReadonlyArray<SectionSpec>;
+}) {
+  return (
+    <main>
+      {sections.map(({ component: Comp, props }, i) => (
+        <section
+          id={(props as any)?.id as string | undefined}
+          key={(props as any)?.id ?? i}
+          className="section"
+        >
+          <Comp {...(props as any)} />
+        </section>
+      ))}
+    </main>
+  );
 }
